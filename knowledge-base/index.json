@@ -1,60 +1,84 @@
 {
-  "version": "1.0",
-  "last_updated": "2026-07-08",
+  "version": "2.0",
+  "last_updated": "2026-07-09",
   "courses": {
-    "ai-intro": {
-      "name": "人工智能导论",
-      "code": "AI-101",
-      "description": "人工智能基础入门课程，涵盖搜索、知识表示、机器学习、深度学习、自然语言处理等核心主题",
-      "total_knowledge_points": 45,
+    "university-physics-1": {
+      "name": "大学物理（上）",
+      "code": "PHYS-101",
+      "description": "大学物理上册，涵盖力学、振动与波、光学、热学与狭义相对论，是理工科基础必修课程",
+      "total_knowledge_points": 52,
       "chapters": [
         {
           "id": "ch01",
-          "title": "绪论",
+          "title": "质点运动学",
           "knowledge_points": ["kp-001", "kp-002", "kp-003", "kp-004"],
-          "weight": 1
+          "weight": 2
         },
         {
           "id": "ch02",
-          "title": "搜索技术",
-          "knowledge_points": ["kp-005", "kp-006", "kp-007", "kp-008", "kp-009", "kp-010"],
+          "title": "质点动力学",
+          "knowledge_points": ["kp-005", "kp-006", "kp-007", "kp-008", "kp-009"],
           "weight": 3
         },
         {
           "id": "ch03",
-          "title": "知识表示与推理",
-          "knowledge_points": ["kp-011", "kp-012", "kp-013", "kp-014", "kp-015"],
-          "weight": 2
-        },
-        {
-          "id": "ch04",
-          "title": "机器学习基础",
-          "knowledge_points": ["kp-016", "kp-017", "kp-018", "kp-019", "kp-020", "kp-021", "kp-022", "kp-023"],
+          "title": "功和能",
+          "knowledge_points": ["kp-010", "kp-011", "kp-012", "kp-013", "kp-014"],
           "weight": 3
         },
         {
+          "id": "ch04",
+          "title": "动量与角动量",
+          "knowledge_points": ["kp-015", "kp-016", "kp-017", "kp-018"],
+          "weight": 2
+        },
+        {
           "id": "ch05",
-          "title": "深度学习",
-          "knowledge_points": ["kp-024", "kp-025", "kp-026", "kp-027", "kp-028", "kp-029", "kp-030"],
+          "title": "刚体力学",
+          "knowledge_points": ["kp-019", "kp-020", "kp-021", "kp-022", "kp-023"],
           "weight": 3
         },
         {
           "id": "ch06",
-          "title": "自然语言处理",
-          "knowledge_points": ["kp-031", "kp-032", "kp-033", "kp-034", "kp-035"],
-          "weight": 2
+          "title": "流体力学",
+          "knowledge_points": ["kp-024", "kp-025", "kp-026"],
+          "weight": 1
         },
         {
           "id": "ch07",
-          "title": "计算机视觉",
-          "knowledge_points": ["kp-036", "kp-037", "kp-038", "kp-039"],
+          "title": "振动",
+          "knowledge_points": ["kp-027", "kp-028", "kp-029", "kp-030"],
           "weight": 2
         },
         {
           "id": "ch08",
-          "title": "大模型与AIGC",
-          "knowledge_points": ["kp-040", "kp-041", "kp-042", "kp-043", "kp-044", "kp-045"],
+          "title": "波动",
+          "knowledge_points": ["kp-031", "kp-032", "kp-033", "kp-034"],
+          "weight": 2
+        },
+        {
+          "id": "ch09",
+          "title": "光学",
+          "knowledge_points": ["kp-035", "kp-036", "kp-037", "kp-038", "kp-039"],
           "weight": 3
+        },
+        {
+          "id": "ch10",
+          "title": "气体动理论",
+          "knowledge_points": ["kp-040", "kp-041", "kp-042", "kp-043"],
+          "weight": 2
+        },
+        {
+          "id": "ch11",
+          "title": "热力学基础",
+          "knowledge_points": ["kp-044", "kp-045", "kp-046", "kp-047", "kp-048"],
+          "weight": 3
+        },
+        {
+          "id": "ch12",
+          "title": "狭义相对论",
+          "knowledge_points": ["kp-049", "kp-050", "kp-051", "kp-052"],
+          "weight": 2
         }
       ]
     },
