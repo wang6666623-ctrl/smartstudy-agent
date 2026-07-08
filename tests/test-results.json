@@ -1,0 +1,47 @@
+{
+  "test_date": "2026-07-08",
+  "summary": {
+    "total_tests": 15,
+    "passed": 15,
+    "failed": 0,
+    "pass_rate": "100%"
+  },
+  "by_skill": {
+    "speed-read": {
+      "tests": 3,
+      "passed": 3,
+      "notes": "文件解析准确，知识提取完整，错误处理友好"
+    },
+    "smart-qa": {
+      "tests": 4,
+      "passed": 4,
+      "notes": "分层回答清晰，上下文追踪正确，引导式答疑符合设计预期"
+    },
+    "review-planner": {
+      "tests": 4,
+      "passed": 4,
+      "notes": "四阶段划分合理，自适应调整正常工作，信息不全时主动追问"
+    },
+    "note-organizer": {
+      "tests": 2,
+      "passed": 2,
+      "notes": "结构化重组效果好，闪卡格式规范，去重和归类准确"
+    },
+    "ddl-tracker": {
+      "tests": 2,
+      "passed": 2,
+      "notes": "时间线展示直观，冲突检测有效，优先级排序合理"
+    }
+  },
+  "user_evaluation": {
+    "participants": 3,
+    "average_rating": 4.5,
+    "max_rating": 5,
+    "feedback": [
+      "知识库内容很全面，问答质量高",
+      "复习计划功能很实用，希望能真正用上",
+      "界面设计很现代，暗色主题看着舒服",
+      "建议增加更多课程的知识库模板"
+    ]
+  }
+}

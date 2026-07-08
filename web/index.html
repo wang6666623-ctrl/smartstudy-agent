@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>智学助手 — SmartStudy Agent</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- 侧边栏 -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h1 class="logo">🧠 智学助手</h1>
+        <p class="subtitle">SmartStudy Agent</p>
+      </div>
+
+      <nav class="nav-menu">
+        <button class="nav-item active" data-view="chat">
+          <span class="nav-icon">💬</span>
+          <span>对话</span>
+        </button>
+        <button class="nav-item" data-view="kb">
+          <span class="nav-icon">📚</span>
+          <span>知识库</span>
+        </button>
+        <button class="nav-item" data-view="skills">
+          <span class="nav-icon">⚡</span>
+          <span>能力模块</span>
+        </button>
+        <button class="nav-item" data-view="about">
+          <span class="nav-icon">ℹ️</span>
+          <span>关于</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <p>基于 Claude API 驱动</p>
+        <p>© 2026 智学助手</p>
+      </div>
+    </aside>
+
+    <!-- 主内容区 -->
+    <main class="main-content">
+      <!-- 对话视图 -->
+      <div class="view active" id="view-chat">
+        <div class="chat-header">
+          <h2>💬 与智学助手对话</h2>
+          <p>我能帮你速读资料、答疑解惑、制定复习计划、整理笔记、管理DDL</p>
+        </div>
+
+        <!-- 快捷入口 -->
+        <div class="quick-actions" id="quickActions">
+          <button class="quick-btn" data-prompt="帮我总结一下这份课件的重点内容">
+            <span class="quick-icon">📖</span>
+            <span>资料速读</span>
+          </button>
+          <button class="quick-btn" data-prompt="什么是A*搜索算法？请用简单的方式解释">
+            <span class="quick-icon">❓</span>
+            <span>智能答疑</span>
+          </button>
+          <button class="quick-btn" data-prompt="帮我制定人工智能导论的两周复习计划">
+            <span class="quick-icon">📅</span>
+            <span>复习规划</span>
+          </button>
+          <button class="quick-btn" data-prompt="帮我整理以下课堂笔记：">
+            <span class="quick-icon">📝</span>
+            <span>笔记整理</span>
+          </button>
+          <button class="quick-btn" data-prompt="我有哪些即将到期的DDL">
+            <span class="quick-icon">⏰</span>
+            <span>DDL管理</span>
+          </button>
+        </div>
+
+        <!-- 消息区 -->
+        <div class="chat-messages" id="chatMessages">
+          <div class="message agent">
+            <div class="message-avatar">🧠</div>
+            <div class="message-content">
+              <p>你好！我是<b>智学助手</b>，你的AI学习伴侣 👋</p>
+              <p>我可以帮你做这些事情：</p>
+              <ul>
+                <li>📖 <b>资料速读</b> — 上传课件，秒出知识卡片</li>
+                <li>❓ <b>智能答疑</b> — 基于知识库的深度解答</li>
+                <li>📅 <b>复习规划</b> — 科学的备考计划</li>
+                <li>📝 <b>笔记整理</b> — 碎片变宝藏</li>
+                <li>⏰ <b>DDL管理</b> — 告别忘记交作业</li>
+              </ul>
+              <p>试试上方的快捷入口，或者直接告诉我你的需求吧！</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 输入区 -->
+        <div class="chat-input-area">
+          <div class="input-row">
+            <textarea id="chatInput" placeholder="输入你的问题或需求…（Shift+Enter换行，Enter发送）" rows="1"></textarea>
+            <button class="attach-btn" id="attachBtn" title="上传文件">📎</button>
+            <input type="file" id="fileInput" hidden accept=".pdf,.pptx,.docx,.md,.txt">
+            <button class="send-btn" id="sendBtn">发送</button>
+          </div>
+          <p class="input-hint">智学助手基于 Claude API · 回答由AI生成，请理性参考</p>
+        </div>
+      </div>
+
+      <!-- 知识库视图 -->
+      <div class="view" id="view-kb">
+        <div class="kb-header">
+          <h2>📚 课程知识库</h2>
+          <p>结构化知识卡片，支持检索和浏览</p>
+        </div>
+        <div class="kb-search">
+          <input type="text" id="kbSearchInput" placeholder="搜索知识点…">
+          <span class="search-icon">🔍</span>
+        </div>
+        <div class="kb-layout">
+          <div class="kb-tree" id="kbTree">
+            <!-- JS动态生成 -->
+          </div>
+          <div class="kb-detail" id="kbDetail">
+            <div class="kb-placeholder">
+              <p>👈 选择左侧的知识点查看详情</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 能力模块视图 -->
+      <div class="view" id="view-skills">
+        <h2>⚡ 五大能力模块</h2>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <div class="skill-card-header">
+              <span class="skill-icon">📖</span>
+              <h3>资料速读</h3>
+              <span class="skill-badge">Speed Read</span>
+            </div>
+            <p>上传课件/论文/教材，自动提取知识点、生成层次化摘要和知识卡片。支持PDF/PPTX/DOCX等格式。</p>
+            <div class="skill-tags">
+              <span>结构识别</span><span>概念提取</span><span>关系建模</span><span>摘要生成</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card-header">
+              <span class="skill-icon">❓</span>
+              <h3>智能答疑</h3>
+              <span class="skill-badge">Smart QA</span>
+            </div>
+            <p>基于课程知识库进行分层解答：简要回答 → 详细推导 → 延伸思考。引导式教学，不只给答案。</p>
+            <div class="skill-tags">
+              <span>知识检索</span><span>CoT推理</span><span>分层回答</span><span>知识溯源</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card-header">
+              <span class="skill-icon">📅</span>
+              <h3>复习规划</h3>
+              <span class="skill-badge">Review Planner</span>
+            </div>
+            <p>根据课程知识体系、考试时间和掌握程度，自动生成四阶段科学复习计划，支持自适应调整。</p>
+            <div class="skill-tags">
+              <span>时间分配</span><span>优先级排序</span><span>阶段规划</span><span>自适应调整</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card-header">
+              <span class="skill-icon">📝</span>
+              <h3>笔记整理</h3>
+              <span class="skill-badge">Note Organizer</span>
+            </div>
+            <p>将零散笔记转化为结构化Markdown笔记和Anki风格闪卡。去重、归类、补全、关联一步到位。</p>
+            <div class="skill-tags">
+              <span>去重归并</span><span>主题分类</span><span>结构化</span><span>闪卡生成</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-card-header">
+              <span class="skill-icon">⏰</span>
+              <h3>DDL管理</h3>
+              <span class="skill-badge">DDL Tracker</span>
+            </div>
+            <p>追踪作业和考试截止日期，生成时间线视图，冲突检测，智能优先级排序，绝不漏掉一个DDL。</p>
+            <div class="skill-tags">
+              <span>时间线</span><span>优先级</span><span>冲突检测</span><span>智能提醒</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 关于视图 -->
+      <div class="view" id="view-about">
+        <h2>ℹ️ 关于智学助手</h2>
+        <div class="about-content">
+          <div class="about-section">
+            <h3>项目背景</h3>
+            <p>智学助手是《人工智能导论》课程设计项目，选择"学习辅助与日常效率类 Agent/Skill"方向，面向大学生构建的多功能AI学习伴侣。</p>
+          </div>
+          <div class="about-section">
+            <h3>技术架构</h3>
+            <table class="about-table">
+              <tr><td>LLM 基座</td><td>Claude API (Fable 5)</td></tr>
+              <tr><td>智能体框架</td><td>Claude Code Agent + Skill</td></tr>
+              <tr><td>知识库</td><td>Markdown + JSON 结构化存储</td></tr>
+              <tr><td>记忆模块</td><td>JSON 文件 + 对话历史</td></tr>
+              <tr><td>Web 界面</td><td>纯静态 HTML/CSS/JS</td></tr>
+            </table>
+          </div>
+          <div class="about-section">
+            <h3>设计特征</h3>
+            <ul>
+              <li>🧠 <b>自主感知</b>：接收文件/问题/日期，自动理解意图</li>
+              <li>🔧 <b>工具调用</b>：搜索、文件处理、知识库检索、日历管理</li>
+              <li>📋 <b>规划决策</b>：根据目标自动拆解任务并执行</li>
+              <li>💾 <b>记忆能力</b>：学习进度、薄弱点、历史对话持久化</li>
+              <li>🗣️ <b>自然交互</b>：对话式交互，支持Web和CLI</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/kb-browser.js"></script>
+  <script src="js/chat.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

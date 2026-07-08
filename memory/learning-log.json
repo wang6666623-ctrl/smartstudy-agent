@@ -1,0 +1,13 @@
+{
+  "sessions": [],
+  "total_interactions": 0,
+  "total_knowledge_points_learned": 0,
+  "skills_used": {
+    "speed-read": 0,
+    "smart-qa": 0,
+    "review-planner": 0,
+    "note-organizer": 0,
+    "ddl-tracker": 0
+  },
+  "last_session": null
+}

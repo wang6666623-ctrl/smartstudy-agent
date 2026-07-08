@@ -1,0 +1,82 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-07-08",
+  "courses": {
+    "ai-intro": {
+      "name": "人工智能导论",
+      "code": "AI-101",
+      "description": "人工智能基础入门课程，涵盖搜索、知识表示、机器学习、深度学习、自然语言处理等核心主题",
+      "total_knowledge_points": 45,
+      "chapters": [
+        {
+          "id": "ch01",
+          "title": "绪论",
+          "knowledge_points": ["kp-001", "kp-002", "kp-003", "kp-004"],
+          "weight": 1
+        },
+        {
+          "id": "ch02",
+          "title": "搜索技术",
+          "knowledge_points": ["kp-005", "kp-006", "kp-007", "kp-008", "kp-009", "kp-010"],
+          "weight": 3
+        },
+        {
+          "id": "ch03",
+          "title": "知识表示与推理",
+          "knowledge_points": ["kp-011", "kp-012", "kp-013", "kp-014", "kp-015"],
+          "weight": 2
+        },
+        {
+          "id": "ch04",
+          "title": "机器学习基础",
+          "knowledge_points": ["kp-016", "kp-017", "kp-018", "kp-019", "kp-020", "kp-021", "kp-022", "kp-023"],
+          "weight": 3
+        },
+        {
+          "id": "ch05",
+          "title": "深度学习",
+          "knowledge_points": ["kp-024", "kp-025", "kp-026", "kp-027", "kp-028", "kp-029", "kp-030"],
+          "weight": 3
+        },
+        {
+          "id": "ch06",
+          "title": "自然语言处理",
+          "knowledge_points": ["kp-031", "kp-032", "kp-033", "kp-034", "kp-035"],
+          "weight": 2
+        },
+        {
+          "id": "ch07",
+          "title": "计算机视觉",
+          "knowledge_points": ["kp-036", "kp-037", "kp-038", "kp-039"],
+          "weight": 2
+        },
+        {
+          "id": "ch08",
+          "title": "大模型与AIGC",
+          "knowledge_points": ["kp-040", "kp-041", "kp-042", "kp-043", "kp-044", "kp-045"],
+          "weight": 3
+        }
+      ]
+    },
+    "general": {
+      "name": "通用学习方法论",
+      "code": "GEN-001",
+      "description": "高效学习方法、记忆技巧、时间管理等通用学习知识",
+      "total_knowledge_points": 8,
+      "chapters": [
+        {
+          "id": "gen01",
+          "title": "高效学习方法",
+          "knowledge_points": ["gp-001", "gp-002", "gp-003", "gp-004"],
+          "weight": 1
+        },
+        {
+          "id": "gen02",
+          "title": "时间管理与自律",
+          "knowledge_points": ["gp-005", "gp-006", "gp-007", "gp-008"],
+          "weight": 1
+        }
+      ]
+    }
+  }
+}
