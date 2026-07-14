@@ -13,3 +13,10 @@ Thumbs.db
 .claude/plans/
 report/
 todo.html
+
+# Streamlit secrets (contains API keys)
+.streamlit/secrets.toml
+webapp/.streamlit/secrets.toml
+
+# Output directory
+output/
